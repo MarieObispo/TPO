@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Focus Deportiva</title>
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="imagenes\logo sin fondo.ico" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/61172ad729.js" crossorigin="anonymous"></script>
+ </head>
+<body class="black">
+   
+ <!-- MENU -->
+<Section>
+    <div id="mySidebar" class="sidebar">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+    <a href="#video">INICIO</a>
+    <a href="#galeria">GALERÍA</a>
+    <a href="#contact">CONTACTO</a>
+    </div>
+<div id="main">
+    <button class="openbtn" onclick="openNav()">☰</button>  
+</div>
+</Section>
+
+
+<script>
+    function openNav() {
+      document.getElementById("mySidebar").style.width = "250px";
+      document.getElementById("main").style.marginLeft = "250px";
+    }
+    
+    function closeNav() {
+      document.getElementById("mySidebar").style.width = "0";
+      document.getElementById("main").style.marginLeft= "0";
+    }
+</script>
+    
+ <!-- VIDEO -->
+<section class="section_video" id="video">
+    <video src="imagenes\Logo corto2.mp4" autoplay muted class="video"></video>  
+</section>
+
+ <!-- GALERÍA -->
+<Section class="grey" id="galeria">
+    <div>
+        <h1 class="titulo">GALERÍA</h1>
+    </div>
+    <div class="slideshow-container">
+
+        <div class="mySlides fade">
+            <Section class="galeria">
+                <div class="contenedor1">
+                    <img src="imagenes\futbol10.jpg">
+                </div>
+                <div class="contenedor1">
+                    <img src="imagenes\futbol11.jpg">
+                </div>
+                <div class="contenedor1">
+                    <img src="imagenes\futbol2.jpg" >
+                </div>
+                <div class="contenedor1">
+                    <img src="imagenes\futbol3.jpg" >
+                </div>
+            </Section>
+
+            <section class="galeria">
+                <div class="contenedor2">
+                    <img src="imagenes\fitcombat.jpg" >
+                </div>
+                <div class="contenedor2">
+                    <img src="imagenes\futbol4.jpg" >
+                </div>
+                <div class="contenedor2">
+                <img src="imagenes\fitcombat1.jpg" >
+                </div>
+            </section>
+            
+        </div>
+
+    <div class="mySlides fade">
+        <section class="galeria">
+            <div class="contenedor2">
+                <img src="imagenes\futbol5.jpg" >
+            </div>
+            <div class="contenedor2">
+                <img src="imagenes\fitcombat2.jpg" >
+            </div>
+            <div class="contenedor2">
+            <img src="imagenes\futbol6.jpg" >
+            </div>
+        </section>
+        <Section class="galeria">
+            <div class="contenedor1">
+                <img src="imagenes\futbol7.jpg" >
+            </div>
+            <div class="contenedor1">
+                <img src="imagenes\fitcombat4.jpg" >
+            </div>
+            <div class="contenedor1">
+                <img src="imagenes\futbol8.jpg" >
+            </div>
+            <div class="contenedor1">
+                <img src="imagenes\futbol9.jpg" >
+            </div>
+        </section>
+    </div>
+
+
+
+
+
+
+    <a class="prev" onclick="plusSlides(-1)">❮</a>
+    <a class="next" onclick="plusSlides(1)">❯</a>
+
+</div>
+
+<div style="text-align:center">
+  <span class="dot" onclick="currentSlide(1)"></span> 
+  <span class="dot" onclick="currentSlide(2)"></span> 
+</div>
+
+<script>
+    let slideIndex = 1;
+    showSlides(slideIndex);
+    
+    function plusSlides(n) {
+      showSlides(slideIndex += n);
+    }
+    
+    function currentSlide(n) {
+      showSlides(slideIndex = n);
+    }
+    
+    function showSlides(n) {
+      let i;
+      let slides = document.getElementsByClassName("mySlides");
+      let dots = document.getElementsByClassName("dot");
+      if (n > slides.length) {slideIndex = 1}    
+      if (n < 1) {slideIndex = slides.length}
+      for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";  
+      }
+      for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+      }
+      slides[slideIndex-1].style.display = "block";  
+      dots[slideIndex-1].className += " active";
+    }
+</script>
+</Section>
+
+<!-- CONTACTO -->
+  <section id="contact">
+    <h1 class="titulo">CONTACTO</h1>
+
+    <div class="grid-container">
+      <div class="mensaje">
+        <form action="https://formspree.io/f/xoqrydjg"
+        method="POST">      
+          <input name="name" type="text" class="feedback-input" placeholder="Nombre" />   
+          <input name="email" type="text" class="feedback-input" placeholder="Email" />
+          <textarea name="text" class="feedback-input" placeholder="Dejanos tu consulta"></textarea>
+          <input type="submit" value="Enviar"/>
+        </form>
+      </div>
+      <div >
+        <ul class="contact-list">
+          <li class="list-item"><span class="contact-text">Buenos Aires, Argentina</span></li>
+          
+          <li class="list-item"><span>+54 9 11 3294-7249</span></li>
+          
+          <li class="list-item"><span>focusdeportiva@gmail.com</span></li>
+        </ul>
+        <hr>
+        <ul class="class="w3-container w3-padding-64 w3-center w3-black w3-xlarge"">
+          <!--<li class="list-item">
+            <a href="https://www.instagram.com/focusdeportiva/" target="_blank">
+              <img src="Imagenes/instagram.png" class="contact-icon">
+            </a>
+          </li>-->
+          <li class="list-item-icon">
+            <a href="construccion.html" target="_blank"><i class="fa fa-facebook-official"></i></a>
+          </li>
+          <li class="list-item-icon">
+            <a href="https://www.instagram.com/focusdeportiva/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+          </li>
+          <li class="list-item-icon">
+            <a href="construccion.html" target="_blank"><i class="fa fa-linkedin"></i></a>
+          </li>
+          <li class="list-item-icon">
+            <a href="mailto:focusdeportiva@gmail.com"><i class="fa-solid fa-envelopes-bulk"></i></a>
+          </li>
+        </ul>
+        <hr>
+      </div>
+      </div>
+      <div class="mapa">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d210147.39707532423!2d-58.57338494756603!3d-34.615461116377574!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcca3b4ef90cbd%3A0xa0b3812e88e88e87!2sBuenos%20Aires%2C%20CABA!5e0!3m2!1ses!2sar!4v1652746645762!5m2!1ses!2sar" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+  </section>  
+
+</body>
+
+<hr>
+<footer class="sign">
+    by <span class="Marie">M@rie</span>    
+</footer>
+<hr>
+</html>
